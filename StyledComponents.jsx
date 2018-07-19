@@ -1,17 +1,17 @@
 import Styled from 'styled-components';
 
 /* RGB */
-const color1 = 'rgba(85, 179, 74, 1)';
-const color2 = 'rgba(72, 163, 217, 1)';
-const color3 = 'rgba(246, 211, 74, 1)';
-const color4 = 'rgba(39, 41, 50, 1)';
-const color5 = 'rgba(152, 38, 73, 1)';
+const tansaGreen = 'rgba(85, 179, 74, 1)';
+const tansaBlue = 'rgba(72, 163, 217, 1)';
+const tansaYellow = 'rgba(246, 211, 74, 1)';
+const lightBlack = 'rgba(39, 41, 50, 1)';
+const wineRed = 'rgba(152, 38, 73, 1)';
 
-console.log("object")
+console.log('object');
 const Header = Styled.div`
     width: 100px;
     height: 100px;
-    background-color: blue;
+    background-color: ${tansaBlue};
 `;
 
 export default Header;
