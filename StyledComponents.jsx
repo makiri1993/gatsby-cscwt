@@ -6,18 +6,19 @@ const tansaBlue = 'rgba(72, 163, 217, 1)';
 const tansaYellow = 'rgba(246, 211, 74, 1)';
 const lightBlack = 'rgba(39, 41, 50, 1)';
 const wineRed = 'rgba(152, 38, 73, 1)';
+const white = '#fefbde';
 
 export const GridContainerBasic = Styled.div `
     display: grid;
     grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
     grid-template-rows: repeat(${props => props.numberOfRows},1fr);
 
-    grid-gap: 1em;
+    grid-gap: 0em;
     grid-auto-rows: auto;
     @media screen and (max-width: 900px) {
         grid-template-columns: 100%;
         grid-template-rows: auto;
-        grid-gap: 1em;
+        grid-gap: 0em;
     }
 `;
 
@@ -65,3 +66,40 @@ export const Header = Styled.div `
     background-color: ${tansaBlue};
 `;
 
+
+
+
+
+export const fillerLeft = Styled.div `
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: ${white};
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-image: url(${props => props.img});
+    background-size: cover;
+    box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
+    transition: 0.8s;
+    &:hover {
+        box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 1);        
+    }
+`;
+
+export const fillerRight = Styled.div `
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: ${white};
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-image: url(${props => props.img});
+    background-size: cover;
+    box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 0.5);
+    transition: 0.8s;
+    &:hover {
+        box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 1);
+    }
+`;
