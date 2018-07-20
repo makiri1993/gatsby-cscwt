@@ -26,6 +26,13 @@ export const GridElement = Styled.div`
     grid-row: ${props => props.gridRow};
 `;
 
+export const GridElementCentered = Styled.div`
+    grid-column: ${props => props.gridColumn};
+    grid-row: ${props => props.gridRow};
+    align-self: center;
+    text-align: center;
+`;
+
 export const NavLogo = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: ${props => props.gridRow};
