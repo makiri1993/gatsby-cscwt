@@ -64,19 +64,10 @@ export const Header = Styled.div`
     height: 100px;
     background-color: ${tansaBlue};
 `;
-export const HeaderMartin = Styled.div`
+
+
+export const HeaderKarim = Styled.div`
     width: 100px;
     height: 100px;
     background-color: ${tansaBlue};
 `;
-<<<<<<< HEAD
-
-    export const HeaderKarim = Styled.div`
-      width: 100px;
-      height: 100px;
-      background-color: ${tansaBlue};
-    `;
-
-
-=======
->>>>>>> 6a07f38cdb0ed41b1989c45c294ddcd6ed134c7e
