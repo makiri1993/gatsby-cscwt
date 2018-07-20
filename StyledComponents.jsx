@@ -64,8 +64,4 @@ export const Header = Styled.div `
     height: 100px;
     background-color: ${tansaBlue};
 `;
-export const HeaderMartin = Styled.div `
-    width: 100px;
-    height: 100px;
-    background-color: ${tansaBlue};
-`;
+
