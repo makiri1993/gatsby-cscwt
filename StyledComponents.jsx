@@ -67,5 +67,10 @@ export const NavLogo = Styled.div`
     background-color: ${tansaBlue};
 `;
 
+    export const HeaderKarim = Styled.div`
+      width: 100px;
+      height: 100px;
+      background-color: ${tansaBlue};
+    `;
 
 
