@@ -3,13 +3,14 @@ import Link from 'gatsby-link';
 
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.png';
-import { OneRowGridContainer, GridElement, NavContainer, NavElement, NavLogo } from '../../StyledComponents';
+// import { GridContainerBasic, GridElement, NavContainer, NavElement, NavLogo } from '../../StyledComponents';
+import * as Styled from '../../StyledComponents';
 
 const Header = () => (
-  <OneRowGridContainer numberofColumns={1} numberofColumns={3}>
-    <GridElement gridColumn={1} gridRow={1}>Test 123</GridElement>
-    <GridElement gridColumn={3} gridRow={1}>Test 1333333323</GridElement>
-  </OneRowGridContainer>
+  <Styled.GridContainerBasic numberofRows={1} numberofColumns={3}>
+    <Styled.GridElement gridColumn={1} gridRow={1}>Test 123</Styled.GridElement>
+    <Styled.GridElement gridColumn={3} gridRow={1}>Test 1333333323</Styled.GridElement>
+  </Styled.GridContainerBasic>
   // <NavContainer>
   //   <NavElement gridColumn={5}>Funf
       

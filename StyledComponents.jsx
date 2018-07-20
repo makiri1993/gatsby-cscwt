@@ -7,7 +7,9 @@ const tansaYellow = 'rgba(246, 211, 74, 1)';
 const lightBlack = 'rgba(39, 41, 50, 1)';
 const wineRed = 'rgba(152, 38, 73, 1)';
 
-const OneRowGridContainer = Styled.div`
+
+
+export const GridContainerBasic = Styled.div`
     display: grid;
     grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
     grid-template-rows: repeat(${props => props.numberOfRows},1fr);
@@ -21,12 +23,12 @@ const OneRowGridContainer = Styled.div`
     }
 `;
 
-const GridElement = Styled.div`
+export const GridElement = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: ${props => props.gridRow};
 `;
 
-const NavContainer = Styled.div`
+export const NavContainer = Styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
@@ -42,14 +44,14 @@ const NavContainer = Styled.div`
     grid-gap: 1em;
  }
 `;
-const NavElement = Styled.div`
+export const NavElement = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: 1;
     width:100%;
     height: 100%;
     background-color: ${tansaBlue};
 `;
-const NavLogo = Styled.div`
+export const NavLogo = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: 1;
     background-image: url("https://blog.codepen.io/wp-content/uploads/2012/06/Black-Large.png");
@@ -59,17 +61,11 @@ const NavLogo = Styled.div`
     height: 10vh;
   `;
 
-const Header = Styled.div`
+  export const Header = Styled.div`
     width: 100px;
     height: 100px;
     background-color: ${tansaBlue};
 `;
 
-export {
-  OneRowGridContainer,
-  GridElement,
-  NavContainer,
-  NavElement,
-  NavLogo,
-  Header
-};
+
+
