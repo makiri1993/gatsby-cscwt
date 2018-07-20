@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
-import Header from '../../StyledComponents'
-import './all.sass'
+import Header from '../components/Header'
+// import Header from '../../StyledComponents'
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
     <Header />
     <div>{children()}</div>
   </div>
