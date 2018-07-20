@@ -6,7 +6,7 @@ import logo from '../img/logo.png';
 import { OneRowGridContainer, GridElement, NavContainer, NavElement, NavLogo } from '../../StyledComponents';
 
 const Header = () => (
-  <OneRowGridContainer numberofColumns={3}>
+  <OneRowGridContainer numberofColumns={1} numberofColumns={3}>
     <GridElement gridColumn={1} gridRow={1}>Test 123</GridElement>
     <GridElement gridColumn={3} gridRow={1}>Test 1333333323</GridElement>
   </OneRowGridContainer>

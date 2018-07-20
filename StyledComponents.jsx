@@ -10,6 +10,8 @@ const wineRed = 'rgba(152, 38, 73, 1)';
 const OneRowGridContainer = Styled.div`
     display: grid;
     grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
+    grid-template-rows: repeat(${props => props.numberOfRows},1fr);
+
     grid-gap: 1em;
     grid-auto-rows: auto;
     @media screen and (max-width: 900px) {
