@@ -7,8 +7,6 @@ const tansaYellow = 'rgba(246, 211, 74, 1)';
 const lightBlack = 'rgba(39, 41, 50, 1)';
 const wineRed = 'rgba(152, 38, 73, 1)';
 
-
-
 export const GridContainerBasic = Styled.div`
     display: grid;
     grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
@@ -61,11 +59,13 @@ export const NavLogo = Styled.div`
     height: 10vh;
   `;
 
-  export const Header = Styled.div`
+export const Header = Styled.div`
     width: 100px;
     height: 100px;
     background-color: ${tansaBlue};
 `;
-
-
-
+export const HeaderMartin = Styled.div`
+    width: 100px;
+    height: 100px;
+    background-color: ${tansaBlue};
+`;
