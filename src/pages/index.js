@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Filler from '../components/Filler'
+import "./style.css"
 
 export default class IndexPage extends React.Component {
   render() {
@@ -8,6 +10,8 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
+      <div className="content">
+      <Filler></Filler>
       <section className="section">
         <div className="container">
           <div className="content">
@@ -39,6 +43,7 @@ export default class IndexPage extends React.Component {
             ))}
         </div>
       </section>
+      </div>
     )
   }
 }
