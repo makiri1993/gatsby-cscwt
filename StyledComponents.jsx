@@ -124,7 +124,3 @@ export const Hero = divFlexItemsCenter.extend`
     height: 100vh;
 `;
 
-export const BlogContentDiv = Styled.div`
-    width: 100%;
-    margin-top 10px;
-`;
