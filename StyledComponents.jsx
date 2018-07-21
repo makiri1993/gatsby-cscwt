@@ -106,9 +106,10 @@ export const fillerRight = fillerLeft.extend`
 `;
 
 export const Tanzania = divFlexItemsCenter.extend`
+    background-image: url('img/tansania.svg');
+    background-repeat: no-repeat;
+    background-position: center; 
     background-color: ${tansaYellow};
-    display:flex;
-
 `;
 
 export const Hero = divFlexItemsCenter.extend`
@@ -117,5 +118,10 @@ export const Hero = divFlexItemsCenter.extend`
     box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.1);
     width: 100%;
     height: 100vh;
+`;
+
+export const BlogContentDiv = Styled.div`
+    width: 100%;
+    margin-top 10px;
 `;
 

@@ -7,7 +7,8 @@ const Tanzania = () => (
   <Styled.GridContainerBasic numberofRows={1} numberofColumns={1}>
     <Styled.GridElement gridColumn={1} gridRow={1}>
 			<Styled.Tanzania>
-				<h1>Tanzania</h1>
+			<h1>Tanzania</h1>
+			
 			</Styled.Tanzania>
 		</Styled.GridElement>
   </Styled.GridContainerBasic>
