@@ -128,6 +128,7 @@ export const TextWithHorizontalLine = Styled.div`
     vertical-align: top;
     position: relative;
     font-size: 1.2em;
+    margin-top: 1em;
     &:after {
         content: '';
         position: absolute;
