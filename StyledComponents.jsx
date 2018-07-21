@@ -38,6 +38,11 @@ export const GridElement = Styled.div`
     grid-row: ${props => props.gridRow};
 `;
 
+export const GridElementWithSpan = Styled.div`
+    grid-column: ${props => props.columnFrom} / ${props => props.columnTo};
+    grid-row: ${props => props.rowFrom} / ${props => props.rowTo};
+`;
+
 export const GridElementCentered = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: ${props => props.gridRow};
@@ -85,7 +90,6 @@ const divFlexItemsCenter = Styled.div`
     height: 80vh;
 `;
 
-
 export const fillerLeft = divFlexItemsCenter.extend`
     background-image: url(${props => props.img});
     background-size: cover;
@@ -124,4 +128,3 @@ export const BlogContentDiv = Styled.div`
     width: 100%;
     margin-top 10px;
 `;
-
