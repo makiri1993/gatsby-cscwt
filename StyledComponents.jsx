@@ -75,7 +75,7 @@ export const Header = Styled.div`
     animation-duration: 50s;
 `;
 
-export const fillerLeft = Styled.div`
+const divFlexItemsCenter = Styled.div`
     display:flex;
     align-items: center;
     justify-content: center;
@@ -83,6 +83,10 @@ export const fillerLeft = Styled.div`
     text-align: center;
     width: 100%;
     height: 80vh;
+`;
+
+
+export const fillerLeft = divFlexItemsCenter.extend`
     background-image: url(${props => props.img});
     background-size: cover;
     box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
@@ -92,16 +96,8 @@ export const fillerLeft = Styled.div`
     }
 `;
 
-export const fillerRight = Styled.div`
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    color: ${white};
-    text-align: center;
-    width: 100%;
-    height: 80vh;
+export const fillerRight = fillerLeft.extend`
     background-image: url(${props => props.img});
-    background-size: cover;
     box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 0.5);
     transition: 0.8s;
     &:hover {
@@ -109,26 +105,16 @@ export const fillerRight = Styled.div`
     }
 `;
 
-export const Tanzania = Styled.div`
+export const Tanzania = divFlexItemsCenter.extend`
     background-color: ${tansaYellow};
     display:flex;
-    align-items: center;
-    justify-content: center;
-    color: ${white};
-    text-align: center;
-    width: 100%;
-    height: 80vh;
+
 `;
 
-export const Hero = Styled.div`
+export const Hero = divFlexItemsCenter.extend`
     background-image: url(${props => props.img});
     background-size: cover;
     box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.1);
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    color: ${white};
-    text-align: center;
     width: 100%;
     height: 100vh;
 `;
