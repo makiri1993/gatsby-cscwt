@@ -1,4 +1,5 @@
-import Styled from 'styled-components';
+import Styled, { keyframes } from 'styled-components';
+import logo from './src/img/cscwt_logo.svg';
 
 /* RGB */
 const tansaGreen = 'rgba(85, 179, 74, 1)';
@@ -7,6 +8,16 @@ const tansaYellow = 'rgba(246, 211, 74, 1)';
 const lightBlack = 'rgba(39, 41, 50, 1)';
 const wineRed = 'rgba(152, 38, 73, 1)';
 const white = '#fefbde';
+
+const keyframeHeaderBackground = keyframes`
+    0%   {background-color: ${tansaGreen};}
+    40%  {background-color: ${tansaGreen};}
+    49%  {background-color: ${tansaYellow};}
+    50%  {background-color: ${lightBlack};}
+    51%  {background-color: ${tansaYellow};}
+    60%  {background-color: ${tansaBlue};}
+    100% {background-color: ${tansaBlue};}
+`;
 
 export const GridContainerBasic = Styled.div`
     display: grid;
@@ -37,24 +48,34 @@ export const GridElementCentered = Styled.div`
 export const NavLogo = Styled.div`
     grid-column: ${props => props.gridColumn};
     grid-row: ${props => props.gridRow};
-    background-image: url("https://blog.codepen.io/wp-content/uploads/2012/06/Black-Large.png");
+    padding-top: 1.5em;
+    background-image: url(${logo});
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     height: 10vh;
   `;
-
+export const NavLink = Styled.a`
+    transition: 0.3s;
+    :hover {
+        color: white;
+        animation-name: ${keyframeHeaderBackground};
+        animation-duration: 7s;
+        border-left: 1px solid ${tansaYellow};
+        border-right: 1px solid ${tansaYellow};
+        padding: 1em 1em;
+    }
+  `;
 export const Header = Styled.div`
-    width: 100px;
-    height: 100px;
+    position: sticky; 
+    top: 0; 
+    width: 100%;
     background-color: ${tansaBlue};
+    animation-name: ${keyframeHeaderBackground};
+    animation-duration: 50s;
 `;
 
-
-
-
-
-export const fillerLeft = Styled.div `
+export const fillerLeft = Styled.div`
     display:flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +92,7 @@ export const fillerLeft = Styled.div `
     }
 `;
 
-export const fillerRight = Styled.div `
+export const fillerRight = Styled.div`
     display:flex;
     align-items: center;
     justify-content: center;
