@@ -23,7 +23,6 @@ export const GridContainerBasic = Styled.div`
     display: grid;
     grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
     grid-template-rows: repeat(${props => props.numberOfRows},1fr);
-
     grid-gap: 0em;
     grid-auto-rows: auto;
     @media screen and (max-width: 900px) {
@@ -110,6 +109,7 @@ export const fillerRight = fillerLeft.extend`
 `;
 
 export const Tanzania = divFlexItemsCenter.extend`
+    height: 80vh;
     background-image: url('img/tansania.svg');
     background-repeat: no-repeat;
     background-position: center; 
@@ -142,3 +142,42 @@ export const TextWithHorizontalLine = Styled.div`
         background-color: #24335a;
     }
  `;
+
+ export const FooterLeft = fillerLeft.extend`
+    height: 50vh;
+    background-color: ${tansaBlue};
+    &:hover {
+        box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
+    }
+`;
+
+ export const FooterRight = fillerLeft.extend`
+    height: 50vh;
+    background-color: ${tansaGreen};
+    box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 0.5);
+
+    &:hover {
+        box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 0.5);
+    }
+    
+`;
+
+const FooterBar = Styled.div`
+    height: 6vh;
+    width: 100%;
+    background-color: ${tansaBlue};
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: ${white};
+    text-align: center;
+`;
+
+
+export const FooterBarLeft = FooterBar.extend`
+
+`;
+
+export const FooterBarRight = FooterBar.extend`
+
+`;
