@@ -120,3 +120,16 @@ export const Tanzania = Styled.div`
     height: 80vh;
 `;
 
+export const Hero = Styled.div`
+    background-image: url(${props => props.img});
+    background-size: cover;
+    box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.1);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: ${white};
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+`;
+

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Hero from '../components/Hero'
 import Filler from '../components/Filler'
 import Tanzania from '../components/Tanzania'
 import "./style.css"
@@ -12,6 +13,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <div className="content">
+      <Hero></Hero>
       <Filler></Filler>
       <Tanzania></Tanzania>
       <section className="section">
