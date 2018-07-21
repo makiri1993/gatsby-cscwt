@@ -108,3 +108,15 @@ export const fillerRight = Styled.div`
         box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 1);
     }
 `;
+
+export const Tanzania = Styled.div`
+    background-color: ${tansaYellow};
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: ${white};
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+`;
+

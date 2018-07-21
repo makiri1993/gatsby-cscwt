@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Filler from '../components/Filler'
+import Tanzania from '../components/Tanzania'
 import "./style.css"
 
 export default class IndexPage extends React.Component {
@@ -12,6 +13,7 @@ export default class IndexPage extends React.Component {
     return (
       <div className="content">
       <Filler></Filler>
+      <Tanzania></Tanzania>
       <section className="section">
         <div className="container">
           <div className="content">
