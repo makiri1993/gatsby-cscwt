@@ -123,4 +123,22 @@ export const Hero = divFlexItemsCenter.extend`
     width: 100%;
     height: 100vh;
 `;
-
+export const TextWithHorizontalLine = Styled.div`
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    font-size: 1.2em;
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 50%;
+        left: 100%;
+        margin-top: -.15rem;
+        margin-left: 3rem;
+        height: .1rem;
+        width: 100000px;
+        background-color: #24335a;
+    }
+ `;
