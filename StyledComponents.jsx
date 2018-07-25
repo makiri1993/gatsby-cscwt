@@ -19,7 +19,7 @@ const keyframeHeaderBackground = keyframes`
     100% {background-color: ${tansaBlue};}
 `;
 const keyframeNavLinkBackground = keyframes`
-    100% {background-color: ${white};}
+    100% {background-color: ${lightBlack};}
 `;
 
 export const GridContainerBasic = styled.div`
@@ -64,6 +64,13 @@ export const GridElementCentered = GridElement.extend`
   position: relative;
 `;
 
+export const GridElementCenteredWithPadding = GridElement.extend`
+  align-self: center;
+  text-align: center;
+  position: relative;
+  padding-bottom: 3em;
+`;
+
 export const NavLogo = styled.div`
   grid-column: ${props => props.gridColumn};
   grid-row: ${props => props.gridRow};
@@ -81,10 +88,11 @@ export const NavLink = styled.a`
   transition: 0.3s;
   :hover {
     color: ${white};
-    animation-name: ${keyframeHeaderBackground};
-    animation-duration: 7s;
+    animation-name: ${keyframeNavLinkBackground};
+    animation-duration: 3s;
     border-left: 1px solid ${tansaYellow};
     border-right: 1px solid ${tansaYellow};
+    border-radius: 20%;
     padding: 1em 1em;
   }
 `;
@@ -95,7 +103,7 @@ export const Header = styled.div`
   width: 100%;
   z-index: 30;
   ${'' /* background-color: ${tansaBlue}; */}
-  background: linear-gradient(175deg, ${tansaGreen} 46%, ${tansaYellow} 49%, ${lightBlack} 50%, ${tansaYellow} 51%, ${tansaBlue} 54%);
+  background: linear-gradient(176deg, ${tansaGreen} 46%, ${tansaYellow} 49%, ${lightBlack} 50%, ${tansaYellow} 51%, ${tansaBlue} 54%);
   ${
     '' /* animation-name: ${keyframeHeaderBackground};
   animation-duration: 50s; */
@@ -166,11 +174,7 @@ export const TextWithHorizontalLine = styled.div`
     background-color: ${white};
   }
 `;
-export const RelativeContainer = styled.div`
-  display: block;
-  width: 100%;
-  ${'' /* max-width: 300px; */};
-`;
+
 export const BlogTileImage = styled.div`
   height: 10rem;
   background: url(${props => props.image});

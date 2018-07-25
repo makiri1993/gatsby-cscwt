@@ -10,7 +10,7 @@ export default class BlogPostOverview extends React.Component {
       blogTiles: [
         {
           image: 'http://lorempixel.com/1280/960/',
-          category: 'News',
+          category: 'Project',
           text:
             '1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
         },
@@ -22,7 +22,7 @@ export default class BlogPostOverview extends React.Component {
         },
         {
           image: 'http://lorempixel.com/1280/960/',
-          category: 'News',
+          category: 'Event',
           text:
             '3 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
         },
@@ -46,7 +46,7 @@ export default class BlogPostOverview extends React.Component {
         },
         {
           image: 'http://lorempixel.com/1280/960/',
-          category: 'News',
+          category: 'Project',
           text:
             '7 Lorem ipsumonsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
         },
@@ -85,11 +85,11 @@ export default class BlogPostOverview extends React.Component {
       startBlog++;
       console.log(i + ' Column ' + startRow + ' Row');
       const blogTile = (
-        <Styled.GridElementCentered gridColumn={i + 2} gridRow={startRow + 1}>
+        <Styled.GridElementCenteredWithPadding gridColumn={i + 2} gridRow={startRow + 1}>
           <Styled.BlogTileInfoBox>{el.category}</Styled.BlogTileInfoBox>
           <Styled.BlogTileImage image={el.image} />
           <Styled.BlogTileText>{el.text}</Styled.BlogTileText>
-        </Styled.GridElementCentered>
+        </Styled.GridElementCenteredWithPadding>
       );
       renderedBlogTiles.push(blogTile);
     }
