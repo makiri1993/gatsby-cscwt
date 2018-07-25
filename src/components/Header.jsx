@@ -1,9 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-import github from '../img/github-icon.svg';
-import logo from '../img/cscwt_logo.svg';
-// import { GridContainerBasic, GridElement, NavContainer, NavElement, NavLogo } from '../../StyledComponents';
 import * as Styled from '../../StyledComponents';
 
 class Header extends React.Component {
@@ -22,7 +19,6 @@ class Header extends React.Component {
     };
   }
   renderMenu = menuElements => {
-    console.log('bin rendermenu');
     return menuElements.map((el, index) => (
       <Styled.GridElementCentered gridColumn={index + 2} gridRow={1}>
         <Styled.NavLink>{el}</Styled.NavLink>
@@ -33,7 +29,7 @@ class Header extends React.Component {
     const renderedMenuElements = this.renderMenu(this.state.menuElements);
     return (
       <Styled.Header>
-        <Styled.GridContainerBasic numberOfRows={1} numberOfColumns={15}>
+        <Styled.GridContainerBasic numberOfRows={1} numberOfColumns={12}>
           <Styled.NavLogo gridColumn={1} gridRow={1} />
           {renderedMenuElements}
         </Styled.GridContainerBasic>

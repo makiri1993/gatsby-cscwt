@@ -1,4 +1,4 @@
-import Styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import logo from './src/img/cscwt_logo.svg';
 
 /* RGB */
@@ -18,75 +18,98 @@ const keyframeHeaderBackground = keyframes`
     60%  {background-color: ${tansaBlue};}
     100% {background-color: ${tansaBlue};}
 `;
+const keyframeNavLinkBackground = keyframes`
+    100% {background-color: ${white};}
+`;
 
-export const GridContainerBasic = Styled.div`
-    display: grid;
-    grid-template-columns: repeat(${props => props.numberOfColumns},1fr);
-    grid-template-rows: repeat(${props => props.numberOfRows},1fr);
+export const GridContainerBasic = styled.div`
+  display: grid;
+  grid-template-columns: repeat(${props => props.numberOfColumns}, 1fr);
+  grid-template-rows: repeat(${props => props.numberOfRows}, 1fr);
+  grid-gap: 0em;
+  grid-auto-rows: auto;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
     grid-gap: 0em;
-    grid-auto-rows: auto;
-    @media screen and (max-width: 900px) {
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        grid-gap: 0em;
-    }
+  }
+`;
+export const GridContainerBasicWithCustomizedColumns = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 2fr 2fr 0.3fr;
+  grid-gap: 2em;
+  grid-auto-rows: auto;
+  background-color: ${wineRed};
+  color: ${white};
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 0em;
+  }
 `;
 
-export const GridElement = Styled.div`
-    grid-column: ${props => props.gridColumn};
-    grid-row: ${props => props.gridRow};
+export const GridElement = styled.div`
+  grid-column: ${props => props.gridColumn};
+  grid-row: ${props => props.gridRow};
 `;
 
-export const GridElementWithSpan = Styled.div`
-    grid-column: ${props => props.columnFrom} / ${props => props.columnTo};
-    grid-row: ${props => props.rowFrom} / ${props => props.rowTo};
+export const GridElementWithSpan = styled.div`
+  grid-column: ${props => props.columnFrom} / ${props => props.columnTo};
+  grid-row: ${props => props.rowFrom} / ${props => props.rowTo};
 `;
 
-export const GridElementCentered = Styled.div`
-    grid-column: ${props => props.gridColumn};
-    grid-row: ${props => props.gridRow};
-    align-self: center;
-    text-align: center;
+export const GridElementCentered = GridElement.extend`
+  align-self: center;
+  text-align: center;
+  position: relative;
 `;
 
-export const NavLogo = Styled.div`
-    grid-column: ${props => props.gridColumn};
-    grid-row: ${props => props.gridRow};
-    padding-top: 1.5em;
-    background-image: url(${logo});
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 10vh;
-  `;
-export const NavLink = Styled.a`
-    transition: 0.3s;
-    :hover {
-        color: white;
-        animation-name: ${keyframeHeaderBackground};
-        animation-duration: 7s;
-        border-left: 1px solid ${tansaYellow};
-        border-right: 1px solid ${tansaYellow};
-        padding: 1em 1em;
-    }
-  `;
-export const Header = Styled.div`
-    position: sticky; 
-    top: 0; 
-    width: 100%;
-    background-color: ${tansaBlue};
-    animation-name: ${keyframeHeaderBackground};
-    animation-duration: 50s;
+export const NavLogo = styled.div`
+  grid-column: ${props => props.gridColumn};
+  grid-row: ${props => props.gridRow};
+  padding-top: 1.2em;
+  padding-bottom: 0em;
+  height: 8vh;
+  background-image: url(${logo});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
-
-const divFlexItemsCenter = Styled.div`
-    display:flex;
-    align-items: center;
-    justify-content: center;
+export const NavLink = styled.a`
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: 0.3s;
+  :hover {
     color: ${white};
-    text-align: center;
-    width: 100%;
-    height: 80vh;
+    animation-name: ${keyframeHeaderBackground};
+    animation-duration: 7s;
+    border-left: 1px solid ${tansaYellow};
+    border-right: 1px solid ${tansaYellow};
+    padding: 1em 1em;
+  }
+`;
+export const Header = styled.div`
+  position: sticky;
+  color: ${white}
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  ${'' /* background-color: ${tansaBlue}; */}
+  background: linear-gradient(175deg, ${tansaGreen} 46%, ${tansaYellow} 49%, ${lightBlack} 50%, ${tansaYellow} 51%, ${tansaBlue} 54%);
+  ${
+    '' /* animation-name: ${keyframeHeaderBackground};
+  animation-duration: 50s; */
+  }
+`;
+
+const divFlexItemsCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${white};
+  text-align: center;
+  width: 100%;
+  height: 80vh;
 `;
 
 export const fillerLeft = divFlexItemsCenter.extend`
@@ -123,28 +146,64 @@ export const Hero = divFlexItemsCenter.extend`
     width: 100%;
     height: 100vh;
 `;
-export const TextWithHorizontalLine = Styled.div`
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    font-size: 1.2em;
-    margin-top: 1em;
-    &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        z-index: 10;
-        top: 50%;
-        left: 100%;
-        margin-top: -.15rem;
-        margin-left: 3rem;
-        height: .1rem;
-        width: 100000px;
-        background-color: #24335a;
-    }
- `;
+export const TextWithHorizontalLine = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 1.2em;
+  margin-top: 1em;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top: 50%;
+    left: 100%;
+    margin-top: -0.15rem;
+    margin-left: 3rem;
+    height: 0.1rem;
+    width: 800%;
+    background-color: ${white};
+  }
+`;
+export const RelativeContainer = styled.div`
+  display: block;
+  width: 100%;
+  ${'' /* max-width: 300px; */};
+`;
+export const BlogTileImage = styled.div`
+  height: 10rem;
+  background: url(${props => props.image});
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  &:hover {
+    box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
+  }
+`;
+export const BlogTileInfoBox = styled.div`
+  position: absolute;
+  margin: auto;
+  top: 9rem;
+  left: 30%;
+  right: 30%;
+  z-index: 2;
 
- export const FooterLeft = fillerLeft.extend`
+  background-color: ${tansaGreen};
+  &:hover {
+    box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
+  }
+`;
+export const BlogTileText = styled.div`
+  height: auto;
+  font-size: 1.5em;
+  padding-top: 5%;
+  background-color: ${tansaBlue};
+  &:hover {
+    box-shadow: inset 0 0 0 80vh rgba(72, 163, 217, 0.5);
+  }
+`;
+export const FooterLeft = fillerLeft.extend`
     height: 50vh;
     background-color: ${tansaBlue};
     &:hover {
@@ -152,7 +211,7 @@ export const TextWithHorizontalLine = Styled.div`
     }
 `;
 
- export const FooterRight = fillerLeft.extend`
+export const FooterRight = fillerLeft.extend`
     height: 50vh;
     background-color: ${tansaGreen};
     box-shadow: inset 0 0 0 80vh rgba(85, 179, 74, 0.5);
@@ -163,22 +222,17 @@ export const TextWithHorizontalLine = Styled.div`
     
 `;
 
-const FooterBar = Styled.div`
-    height: 6vh;
-    width: 100%;
-    background-color: ${tansaBlue};
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    color: ${white};
-    text-align: center;
+const FooterBar = styled.div`
+  height: 6vh;
+  width: 100%;
+  background-color: ${tansaBlue};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${white};
+  text-align: center;
 `;
 
+export const FooterBarLeft = FooterBar.extend``;
 
-export const FooterBarLeft = FooterBar.extend`
-
-`;
-
-export const FooterBarRight = FooterBar.extend`
-
-`;
+export const FooterBarRight = FooterBar.extend``;
