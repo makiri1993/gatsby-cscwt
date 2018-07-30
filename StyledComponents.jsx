@@ -39,7 +39,7 @@ export const GridContainerBasicWithCustomizedColumns = styled.div`
   grid-template-columns: 0.3fr 2fr 2fr 2fr 0.3fr;
   grid-gap: 2em;
   grid-auto-rows: auto;
-  background-color: ${wineRed};
+  background-color: ${tansaGreen};
   color: ${white};
   @media screen and (max-width: 900px) {
     grid-template-columns: 100%;
@@ -102,8 +102,8 @@ export const Header = styled.div`
   top: 0;
   width: 100%;
   z-index: 30;
-  ${'' /* background-color: ${tansaBlue}; */}
-  background: linear-gradient(176deg, ${tansaGreen} 46%, ${tansaYellow} 49%, ${lightBlack} 50%, ${tansaYellow} 51%, ${tansaBlue} 54%);
+  background-color: ${wineRed};
+  ${'' /* background: linear-gradient(176deg, ${tansaGreen} 46%, ${tansaYellow} 49%, ${lightBlack} 50%, ${tansaYellow} 51%, ${tansaBlue} 54%); */}
   ${
     '' /* animation-name: ${keyframeHeaderBackground};
   animation-duration: 50s; */
@@ -170,7 +170,7 @@ export const TextWithHorizontalLine = styled.div`
     margin-top: -0.15rem;
     margin-left: 3rem;
     height: 0.1rem;
-    width: 800%;
+    width: 83vw;
     background-color: ${white};
   }
 `;
